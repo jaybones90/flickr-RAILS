@@ -1,0 +1,16 @@
+<h1>Edit Pages</h1>
+
+<%= form_for @user  do |f| %>
+  <%= f.label "Edit User Name" %>
+  <%= f.text_field :user_name %>
+  <%= f.label "Edit Email" %>
+  <%= f.text_field :email %>
+  <%= f.label "Edit Password" %>
+  <%= f.password_field :password %>
+  <%= f.label :profile_pic, "Edit Profile Picture" %>
+  <%= link_to "Delete Profile Picture", {:controller => "users", :action => 'edit', :delete_picture => true} %>
+  <%= f.file_field :avatar %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "Sign Up" %>
+<% end %>

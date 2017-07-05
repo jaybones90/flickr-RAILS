@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # routes for user auth
-  resources :users, :except => [:edit, :update]
+  resources :users
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
