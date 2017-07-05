@@ -1,2 +1,10 @@
 
 <h1>Home Page</h1>
+
+<% if !@images.nil? %>
+  <% @images.each do |image| %>
+    <%= image.avatar %>
+  <% end %>
+<% else %>
+  <h1> Flickr Died </h1>
+<% end %>

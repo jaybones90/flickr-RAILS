@@ -1,12 +1,14 @@
-As a user I want to create a secure account
+As a user I want to create a secure account √
 As a user I want to upload photos to my account
-As a user I want to login and out of my account
+As a user I want to login and out of my account √
 As a user I want to see images uploaded by other users
 As a user I want full CRUD functionality over my uploaded images
-As a user I want full CRUD functionality over my account info
+As a user I want full CRUD functionality over my account info √
 As a user I want to be able to tag users (if user exists) in an image
 As a user I want to be able to add images to my "favorites"
 As a user I want to be able to comment on images
 As a user I want full CRUD functionality over my comments
 As a user I want the ability to mark images as "private"
 As an admin I want to have full CRUD over all images
+
+https://stackoverflow.com/questions/10921537/rails-paperclip-multiple-file-uploads
