@@ -2,6 +2,7 @@
 <%= image_tag @user.avatar.url(:thumb) if @user.avatar_file_name != nil %>
 <br>
 
-<%= link_to "Edit Profile", edit_user_path(@user) %>
-
-<%= link_to "Delete", user_path(@user), :data => {:confirm => "You sure bro?", :method => 'delete'} %>
+<ul>
+  <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
+  <li><%= link_to "Delete Profile", user_path(@user), :data => {:confirm => "You sure bro?", :method => 'delete'} %></li>
+</ul>

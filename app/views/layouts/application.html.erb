@@ -12,12 +12,13 @@
     <div class="my-nav">
       <div class="container">
         <ul>
+          <li><%= link_to "Home", root_path %></li>
         <% if current_user %>
-          <li><%= current_user.user_name %></li>
-          <li><%= link_to "Sign out", '/signout' %></li>
+          <li class="li-right"><%= link_to "Sign out", '/signout' %></li>
+          <li class="li-right"><%= link_to current_user.user_name, user_path(current_user) %></li>
         <% else %>
-          <li><%= link_to "Sign up", 'signup' %></li>
-          <li><%= link_to "Sign in", '/signin' %></li>
+          <li class="li-right"><%= link_to "Sign up", 'signup' %></li>
+          <li class="li-right"><%= link_to "Sign in", '/signin' %></li>
         <% end %>
         </ul>
       </div>
