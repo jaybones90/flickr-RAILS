@@ -9,8 +9,25 @@
   </head>
 
   <body>
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="my-nav">
+      <div class="container">
+        <ul>
+        <% if current_user %>
+          <li><%= current_user.user_name %></li>
+          <li><%= link_to "Sign out", '/signout' %></li>
+        <% else %>
+          <li><%= link_to "Sign up", 'signup' %></li>
+          <li><%= link_to "Sign in", '/signin' %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="container">
+        <p><%= flash[:alert] %></p>
+        <p><%= flash[:notice] %></p>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

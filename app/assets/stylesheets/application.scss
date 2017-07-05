@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .content-wrapper {
+   padding: 4em 0;
+ }
+ .my-nav {
+   padding-top: 1em;
+   position: fixed;
+   width: 100%;
+   background-color: rgba(255, 255, 255, 0.9);
+   border-bottom: solid 1px #333;
+   z-index: 10;
+   ul {
+     padding: 0;
+     li {
+       display: inline;
+       margin-right: 1em;
+       a {
+         color: inherit;
+       }
+       img {
+         height: 1em;
+       }
+     }
+     .li-right {
+       float: right;
+     }
+   }
+ }
+label, textarea, button, input {
+  display: block;
+}
+input[type="submit"], label {
+  margin-top: 1em;
+}
