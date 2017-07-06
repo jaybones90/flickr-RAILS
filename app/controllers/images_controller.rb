@@ -5,6 +5,11 @@ class ImagesController < ApplicationController
     @images = @user.images
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @image = @user.images.find(params[:id])
+  end
+
   def create
     @user = User.find(params[:user_id])
     image = @user.images.new(image_params)
@@ -19,7 +24,7 @@ class ImagesController < ApplicationController
 
 private
   def image_params
-    params.require(:image).permit(:avatar, :caption)
+    params.require(:image).permit(:avatar, :caption, :private)
   end
 
 

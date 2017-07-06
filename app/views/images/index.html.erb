@@ -1,8 +1,10 @@
 <h3><%= @user.user_name %>'s images'</h3>
 <% @images.each do |image| %>
-<div class="img-in-grid" style="background-image:url(<%= image.avatar %>);">
-  <div class="black"></div>
-  <figcaption><%= image.caption %></figcaption>
-</div>
+<a href="/users/<%= @user.id %>/images/<%= image.id %>">
+  <div class="img-in-grid" style="background-image:url(<%= image.avatar %>);">
+    <div class="black"></div>
+    <figcaption><%= image.caption %></figcaption>
+  </div>
+</a>
   <!-- <%= image_tag image.avatar.url(:medium) %> -->
 <% end %>

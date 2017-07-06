@@ -16,6 +16,8 @@
     <%= f.file_field :avatar %>
     <%= f.label :caption %>
     <%= f.text_field :caption %>
+    <%= f.label :private, "Mark This Photo As Private" %>
+    <%= f.check_box :private, {}, true, false %>
     <%= f.submit %>
     <% end %>
   </div>

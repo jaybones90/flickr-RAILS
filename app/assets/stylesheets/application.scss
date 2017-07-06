@@ -97,7 +97,12 @@ input[type="submit"], label {
     padding: 2px;
   }
 }
-
+.full-size-image {
+  max-width: 100%;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
 
 
 

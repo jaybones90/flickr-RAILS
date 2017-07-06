@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @images = Image.all
+    @images = Image.all.take(30)
   end
 
 end
