@@ -5,4 +5,9 @@ class Image < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   validates :avatar, attachment_presence: true
+
+  scope(:not_private, -> do
+    where({:private => nil})
+  end)
+
 end

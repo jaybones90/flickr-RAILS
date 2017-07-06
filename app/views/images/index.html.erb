@@ -1,12 +1,24 @@
-<h3><%= @user.user_name %>'s images'</h3>
-<% @images.each do |image| %>
-<% if image.private != true %>
-<a href="/users/<%= @user.id %>/images/<%= image.id %>">
-  <div class="img-in-grid" style="background-image:url(<%= image.avatar %>);">
-    <div class="black"></div>
-    <figcaption><%= image.caption %></figcaption>
-  </div>
-</a>
-<% end %>
-  <!-- <%= image_tag image.avatar.url(:medium) %> -->
+<h3><%= @user.user_name %>'s images</h3>
+<% if current_user %>
+  <% @images.each do |image| %>
+    <% if image.private != true || @user.id == current_user.id %>
+    <a href="/users/<%= @user.id %>/images/<%= image.id %>">
+      <div class="img-in-grid" style="background-image:url(<%= image.avatar %>);">
+        <div class="black"></div>
+        <figcaption><%= image.caption %></figcaption>
+      </div>
+    </a>
+    <% end %>
+  <% end %>
+<% else %>
+  <% @images.each do |image| %>
+    <% if image.private != true %>
+    <a href="/users/<%= @user.id %>/images/<%= image.id %>">
+      <div class="img-in-grid" style="background-image:url(<%= image.avatar %>);">
+        <div class="black"></div>
+        <figcaption><%= image.caption %></figcaption>
+      </div>
+    </a>
+    <% end %>
+  <% end %>
 <% end %>
