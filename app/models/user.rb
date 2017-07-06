@@ -5,8 +5,6 @@ class User < ApplicationRecord
 
    validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-  # before_action :authenticate_user!
-
   attr_accessor :password
   validates_confirmation_of :password
   validates :email, :user_name, :presence => true, :uniqueness => true

@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'faker'
+gem 'faker', github: 'stympy/faker'
 gem 'devise', '~> 4.3'
 
 gem "rb-fsevent", "0.9.8"
@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'launchy'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do
