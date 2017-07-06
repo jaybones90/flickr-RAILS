@@ -1,9 +1,9 @@
 
 <h1>Home Page</h1>
 
-<% if !@images.nil? %>
+<% if @images.any? %>
   <% @images.each do |image| %>
-    <%= image.avatar %>
+  <%= image_tag image.avatar.url(:medium) %>
   <% end %>
 <% else %>
   <h1> Flickr Died </h1>

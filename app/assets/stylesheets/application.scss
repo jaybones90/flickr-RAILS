@@ -57,3 +57,79 @@ label, textarea, button, input {
 input[type="submit"], label {
   margin-top: 1em;
 }
+
+
+// ------------------- image grid styles
+// ------------------- image grid styles
+// ------------------- image grid styles
+
+.img-in-grid {
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+  &:hover figcaption {
+    display: inherit;
+  }
+  &:hover .black {
+    display: inherit;
+  }
+  .black {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+  }
+  figcaption {
+    position: absolute;
+    color: white;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 2px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end

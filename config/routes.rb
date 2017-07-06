@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
+  resources :users do
+    # get :show, on: :member
+    resources :images
+
+  end
+
   # routes for user auth
-  resources :users
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
