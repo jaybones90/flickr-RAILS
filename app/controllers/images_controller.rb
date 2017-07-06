@@ -13,6 +13,7 @@ class ImagesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     image = @user.images.new(image_params)
+    image.tags.push(image_params[:tags])
     if image.save
       flash[:notice] = "Image added successfully"
       redirect_to user_path(@user)
@@ -24,7 +25,7 @@ class ImagesController < ApplicationController
 
 private
   def image_params
-    params.require(:image).permit(:avatar, :caption, :private)
+    params.require(:image).permit(:avatar, :caption, :private, :tags)
   end
 
 

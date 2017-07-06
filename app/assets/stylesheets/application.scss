@@ -103,7 +103,9 @@ input[type="submit"], label {
   text-align: center;
   margin: auto;
 }
-
+input[type="checkbox"] {
+  display: inline;
+}
 
 
 

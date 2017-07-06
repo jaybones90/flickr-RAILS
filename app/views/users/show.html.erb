@@ -1,23 +1,25 @@
 <div class="row">
   <div class="col-sm-3">
-    <h1> <%= @user.user_name %> </h1>
-    <%= image_tag @user.avatar.url(:thumb) if @user.avatar_file_name != nil %>
+    <h1> <%= current_user.user_name %> </h1>
+    <%= image_tag current_user.avatar.url(:thumb) if current_user.avatar_file_name != nil %>
     <br>
 
     <ul>
-      <li><%= link_to "My Images", user_images_path(@user) %></li>
-      <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
-      <li><%= link_to "Delete Profile", user_path(@user), :data => {:confirm => "You sure bro?", :method => 'delete'} %></li>
+      <li><%= link_to "My Images", user_images_path(current_user) %></li>
+      <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+      <li><%= link_to "Delete Profile", user_path(current_user), :data => {:confirm => "You sure bro?", :method => 'delete'} %></li>
     </ul>
   </div>
   <div class="col-sm-9">
-    <%= form_for [@user, @image] do |f| %>
+    <%= form_for [current_user, @image] do |f| %>
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
     <%= f.label :caption %>
     <%= f.text_field :caption %>
     <%= f.label :private, "Mark This Photo As Private" %>
-    <%= f.check_box :private, {}, true, false %>
+    <%= f.check_box :private, {}, true, false %> <span>Yes</span><br>
+    <%= f.label :tags, "Tag a user" %>
+    <%= f.select :tags, options_from_collection_for_select(User.all, 'user_name', 'user_name'), :include_blank => true %>
     <%= f.submit %>
     <% end %>
   </div>
