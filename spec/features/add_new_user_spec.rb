@@ -10,7 +10,6 @@ describe "add a new user" do
     fill_in "Password", with: user.password
     fill_in "Confirm Password", with: user.password
     click_on "Sign Up"
-    binding.pry
     expect(page).to have_content("You've successfully signed up!")
   end
 end

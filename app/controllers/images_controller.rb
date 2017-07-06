@@ -8,6 +8,13 @@ class ImagesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @image = @user.images.find(params[:id])
+
+
+    if added_img = params[:favorite]
+      img = Image.find(added_img.to_i)
+      @user.favorites.push(img)
+      @user.update({favorites: img})
+    end
   end
 
   def create

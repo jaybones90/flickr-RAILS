@@ -1,5 +1,5 @@
 <div class="full-size-image">
   <h4>posted by <%= link_to @image.user.user_name, user_images_path(@image.user) %> <em><%= time_ago_in_words(@image.avatar_updated_at) %> ago</em></h4>
-  <%= image_tag @image.avatar %>
+  <%= image_tag @image.avatar %><span class="like"><%= link_to "♥", {controller: "images", action: "show", favorite: @image }%></span>
   <figcaption><%= @image.caption %></figcaption>
 </div>
